@@ -1,7 +1,6 @@
 <template>
   <lightning-card title="Pre-Recorded Transaction Entry">
     <div class="slds-m-around_medium">
-      <!-- TODO: payee: datatable -->
       <lightning-input
         label="Payee"
         required
@@ -18,8 +17,12 @@
 
       <lightning-input label="Memo"></lightning-input>
 
-      <div class="slds-m-top_medium submit">
-        <lightning-button variant="brand" label="Save"></lightning-button>
+      <div class="slds-m-top_medium">
+        <lightning-button
+          variant="brand"
+          label="Save"
+          style="display: grid; width: 100%"
+        ></lightning-button>
       </div>
     </div>
   </lightning-card>

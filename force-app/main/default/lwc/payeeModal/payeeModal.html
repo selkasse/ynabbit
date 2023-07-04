@@ -1,7 +1,17 @@
 <template>
   <lightning-modal-header label="Select Payee"></lightning-modal-header>
   <lightning-modal-body>
-    payee lightning datatable goes here
+    <div class="slds-align_absolute-center">
+      <div class="slds-m-top_none">
+        <lightning-radio-group
+          name="payeeRadioGroup"
+          options={options}
+          value={value}
+          type="radio"
+          variant="label-hidden"
+        ></lightning-radio-group>
+      </div>
+    </div>
   </lightning-modal-body>
   <lightning-modal-footer>
     <lightning-button label="OK" onclick={handleOkay}></lightning-button>
