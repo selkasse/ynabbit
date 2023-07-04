@@ -1,0 +1,26 @@
+<template>
+  <lightning-card title="Pre-Recorded Transaction Entry">
+    <div class="slds-m-around_medium">
+      <!-- TODO: payee: datatable -->
+      <lightning-input
+        label="Payee"
+        required
+        onclick={handlePayeeClick}
+      ></lightning-input>
+
+      <lightning-input
+        label="Amount"
+        type="currency"
+        required
+      ></lightning-input>
+
+      <lightning-input label="Category" required></lightning-input>
+
+      <lightning-input label="Memo"></lightning-input>
+
+      <div class="slds-m-top_medium submit">
+        <lightning-button variant="brand" label="Save"></lightning-button>
+      </div>
+    </div>
+  </lightning-card>
+</template>
