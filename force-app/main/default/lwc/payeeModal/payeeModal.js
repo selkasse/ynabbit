@@ -27,9 +27,10 @@ export default class PayeeModal extends LightningModal {
   }
 
   handleOkay() {
-    console.log(
-      `selectedPayee in handleOkay: ${JSON.stringify(this.selectedPayee)}`
-    );
+    const closeModalEvent = new CustomEvent("payeemodalclosed", {
+      detail: this.selectedPayee
+    });
     this.close(`okay`);
+    this.dispatchEvent(closeModalEvent);
   }
 }
