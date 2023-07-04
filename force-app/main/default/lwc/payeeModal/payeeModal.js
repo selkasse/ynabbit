@@ -5,6 +5,7 @@ import { api } from "lwc";
 export default class PayeeModal extends LightningModal {
   @api content;
   //   columns = columns;
+  selectedPayee;
 
   value = "";
 
@@ -19,7 +20,16 @@ export default class PayeeModal extends LightningModal {
     return opts;
   }
 
+  handleChange(event) {
+    this.selectedPayee = this.content.find(
+      (option) => option.Id === event.detail.value
+    );
+  }
+
   handleOkay() {
+    console.log(
+      `selectedPayee in handleOkay: ${JSON.stringify(this.selectedPayee)}`
+    );
     this.close(`okay`);
   }
 }
