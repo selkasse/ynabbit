@@ -4,6 +4,8 @@
       <lightning-input
         label="Payee"
         required
+        disabled
+        value={selectedPayeeName}
         onclick={handlePayeeClick}
       ></lightning-input>
 
@@ -11,8 +13,13 @@
         label="Amount"
         type="currency"
         required
+        disabled
       ></lightning-input>
 
+      <!-- TODO: multiple lightning-datatables in category modal -->
+      <!-- TODO: datatables will have heading of Category Group Name-->
+      <!-- TODO: datatables will have rows of Category names and available amounts -->
+      <!-- TODO: as in, each Category Group will have its own lightning-datatable -->
       <lightning-input label="Category" required></lightning-input>
 
       <lightning-input label="Memo"></lightning-input>

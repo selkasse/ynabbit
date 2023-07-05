@@ -1,10 +1,15 @@
 import LightningModal from "lightning/modal";
-import { api } from "lwc";
+import { api, wire } from "lwc";
 
-// const columns = [{ label: "Payee Name", fieldName: "Name" }];
+import { publish, MessageContext } from "lightning/messageService";
+import YNABBITMessageChannel from "@salesforce/messageChannel/YNABBITMessageChannel__c";
+
 export default class PayeeModal extends LightningModal {
   @api content;
-  //   columns = columns;
+
+  @wire(MessageContext)
+  messageContext;
+
   selectedPayee;
 
   value = "";
@@ -27,10 +32,11 @@ export default class PayeeModal extends LightningModal {
   }
 
   handleOkay() {
-    const closeModalEvent = new CustomEvent("payeemodalclosed", {
-      detail: this.selectedPayee
-    });
+    const payload = {
+      payeeId: this.selectedPayee.Id,
+      payeeName: this.selectedPayee.Name
+    };
+    publish(this.messageContext, YNABBITMessageChannel, payload);
     this.close(`okay`);
-    this.dispatchEvent(closeModalEvent);
   }
 }

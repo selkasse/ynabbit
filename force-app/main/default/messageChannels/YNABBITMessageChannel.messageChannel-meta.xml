@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+   <masterLabel>YNABBITMessageChannel</masterLabel>
+   <isExposed>true</isExposed>
+   <description>enables communication between modals and the main YNABBIT pre-recorded transaction entry form</description>
+
+   <lightningMessageFields>
+       <fieldName>payeeId</fieldName>
+       <description>record Id of the selected Payee</description>
+   </lightningMessageFields>
+
+   <lightningMessageFields>
+       <fieldName>payeeName</fieldName>
+       <description>Name of the selected Payee</description>
+   </lightningMessageFields>
+
+</LightningMessageChannel>
