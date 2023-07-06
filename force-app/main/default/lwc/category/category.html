@@ -1,0 +1,8 @@
+<template>
+  <div onclick={handleCategoryClick}>
+    <template if:true={showCheckbox}>
+      <lightning-input type="checkbox"></lightning-input>
+    </template>
+    {name} {available}
+  </div>
+</template>

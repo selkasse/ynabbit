@@ -1,5 +1,6 @@
 import { LightningElement, wire } from "lwc";
 import getPayees from "@salesforce/apex/PreRecordedTransactionController.getPayees";
+import getCategoryGroups from "@salesforce/apex/PreRecordedTransactionController.getCategoryGroups";
 import payeeModal from "c/payeeModal";
 import categoryModal from "c/categoryModal";
 
@@ -16,6 +17,7 @@ export default class PreRecordedTransactionEntry extends LightningElement {
   payees;
   selectedPayeeId;
   selectedPayeeName;
+  categoryGroups;
   subscription = null;
 
   @wire(MessageContext)
@@ -40,6 +42,11 @@ export default class PreRecordedTransactionEntry extends LightningElement {
   async connectedCallback() {
     const payeesResult = await getPayees();
     this.payees = payeesResult;
+
+    const categoryGroupsResult = await getCategoryGroups();
+    this.categoryGroups = categoryGroupsResult;
+    console.log(`this.categoryGroups: ${JSON.stringify(this.categoryGroups)}`);
+
     this.subscribeToMessageChannel();
   }
 
@@ -54,7 +61,12 @@ export default class PreRecordedTransactionEntry extends LightningElement {
     });
   }
 
-  async handleCategoryClick() {}
+  async handleCategoryClick() {
+    await categoryModal.open({
+      size: this.size,
+      content: this.categoryGroups
+    });
+  }
 
   handlePayeeMessage(message) {
     this.selectedPayeeId = message.payeeId;

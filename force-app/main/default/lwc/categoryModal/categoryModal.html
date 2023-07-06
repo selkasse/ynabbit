@@ -1,9 +1,22 @@
 <template>
-  <lightning-modal-header label="Select Payee"></lightning-modal-header>
+  <lightning-modal-header label="Select Category"></lightning-modal-header>
   <lightning-modal-body>
-    <!-- TODO: lightning-datatables here -->
+    <template for:each={content} for:item="categoryGroup">
+      <h1 key={categoryGroup.Id} class="category-group">
+        {categoryGroup.Name}
+      </h1>
+      <template for:each={categoryGroup.Categories__r} for:item="category">
+        <div key={category.Id}>
+          <c-category category={category} show-checkbox={isSplit}></c-category>
+        </div>
+      </template>
+    </template>
   </lightning-modal-body>
   <lightning-modal-footer>
-    <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+    <lightning-button
+      label="Split"
+      variant="brand"
+      onclick={handleSplit}
+    ></lightning-button>
   </lightning-modal-footer>
 </template>
