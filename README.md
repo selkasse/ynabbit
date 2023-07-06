@@ -16,6 +16,7 @@ Sometimes I want to split a transaction, but I've forgotten the exact numbers by
   - Payee
   - Category/Category Group
   - Split Amounts across multiple categories
+  - Memo
 - use the YNAB API to load the following YNAB data into Salesforce
   - Budget ID
   - Payees
