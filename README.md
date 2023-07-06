@@ -2,7 +2,7 @@
 
 YNABBIT is a personal project that aims to simplify my workflow when using YNAB.
 
-## The Problem: Elongated Feedback Loops
+## The Problem: Long Feedback Loops
 
 Sometimes by the time a transaction shows up in YNAB, I forget exactly what it was for.
 
