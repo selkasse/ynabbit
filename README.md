@@ -13,14 +13,18 @@ Sometimes I want to split a transaction, but I've forgotten the exact numbers by
 ## The Solution: Pre-Record Transactions as soon as they happen
 
 - use Salesforce to pre-record transactions via the mobile app, including:
+
   - Payee
   - Category/Category Group
-  - Split Amounts across multiple categories
+  - Split transaction amount across multiple categories
   - Memo
+
 - use the YNAB API to load the following YNAB data into Salesforce
+
   - Budget ID
   - Payees
   - Categories
+
 - use Twilio to automatically create pre-recorded transactions in Salesforce
 
   - set up text message notification via online banking
