@@ -24,6 +24,7 @@ Sometimes I want to split a transaction, but I've forgotten the exact numbers by
   - Budget ID
   - Payees
   - Categories
+  - Category Groups
 
 - use Twilio to automatically create pre-recorded transactions in Salesforce
 
