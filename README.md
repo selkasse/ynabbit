@@ -10,7 +10,7 @@ Sometimes the vendor/payee isn't obvious by the name.
 
 Sometimes I want to split a transaction, but I've forgotten the exact numbers by the time the transaction shows up in YNAB.
 
-## The Solution -- Pre-Record Transactions as soon as they happen
+## The Solution: Pre-Record Transactions as soon as they happen
 
 - use Salesforce to pre-record transactions via the mobile app, including:
   - Payee
