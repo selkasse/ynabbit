@@ -2,7 +2,7 @@
 
 YNABBIT is a personal project that aims to simplify my workflow when using YNAB.
 
-## The Problem
+## The Problem: Elongated Feedback Loops
 
 Sometimes by the time a transaction shows up in YNAB, I forget exactly what it was for.
 
@@ -38,6 +38,6 @@ Sometimes I want to split a transaction, but I've forgotten the exact numbers by
   - sync can be configured to run periodically via Salesforce scheduled jobs
   - sync can also be run on-demand via the YNAB mobile app and iOS Shortcuts
 
-## The Result
+## The Result: Out of your head, into your system
 
 When opening the YNAB app, transactions will already be categorized and split, and will just need to be approved
