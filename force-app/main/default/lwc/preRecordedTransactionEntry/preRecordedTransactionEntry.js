@@ -1,6 +1,7 @@
 import { LightningElement, wire } from "lwc";
 import getPayees from "@salesforce/apex/PreRecordedTransactionController.getPayees";
 import payeeModal from "c/payeeModal";
+import categoryModal from "c/categoryModal";
 
 import {
   subscribe,
@@ -52,6 +53,8 @@ export default class PreRecordedTransactionEntry extends LightningElement {
       content: this.payees
     });
   }
+
+  async handleCategoryClick() {}
 
   handlePayeeMessage(message) {
     this.selectedPayeeId = message.payeeId;

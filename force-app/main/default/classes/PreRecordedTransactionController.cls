@@ -11,4 +11,19 @@ public with sharing class PreRecordedTransactionController {
 
     return payees;
   }
+
+  @AuraEnabled
+  public static List<Category_Group__c> getCategoryGroups() {
+    List<Category_Group__c> categoryGroups = new List<Category_Group__c>();
+    try {
+      categoryGroups = [
+        SELECT Id, Name, (SELECT Id, Name, Available__c FROM Categories__r)
+        FROM Category_Group__c
+      ];
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+
+    return categoryGroups;
+  }
 }

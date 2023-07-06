@@ -20,7 +20,11 @@
       <!-- TODO: datatables will have heading of Category Group Name-->
       <!-- TODO: datatables will have rows of Category names and available amounts -->
       <!-- TODO: as in, each Category Group will have its own lightning-datatable -->
-      <lightning-input label="Category" required></lightning-input>
+      <lightning-input
+        label="Category"
+        onclick={handleCategoryClick}
+        required
+      ></lightning-input>
 
       <lightning-input label="Memo"></lightning-input>
 
