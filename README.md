@@ -1,18 +1,38 @@
-# Salesforce DX Project: Next Steps
+# YNABBIT
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+YNABBIT is a personal project that aims to simplify my workflow when using YNAB.
 
-## How Do You Plan to Deploy Your Changes?
+## The Problem
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Sometimes by the time a transaction shows up in YNAB, I forget exactly what it was for.
 
-## Configure Your Salesforce DX Project
+Sometimes the vendor/payee isn't obvious by the name.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Sometimes I want to split a transaction, but I've forgotten the exact numbers by the time the transaction shows up in YNAB.
 
-## Read All About It
+## The Solution
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+- use Salesforce to pre-record transactions via the mobile app, including:
+  - Payee
+  - Category/Category Group
+  - Split Amounts across multiple categories
+- use the YNAB API to load the following YNAB data into Salesforce
+  - Budget ID
+  - Payees
+  - Categories
+- use Twilio to automatically create pre-recorded transactions in Salesforce
+
+  - set up text message notification via online banking
+  - point text message notifications to Twilio number via webhook
+  - Twilio webhook calls Salesforce via REST endpoint to create pre-recorded transaction
+  - Salesforce mobile app sends notification when a new pre-recorded transaction is created this way
+    - Amount and Payee are pre-filled from online banking notification
+    - User then categorizes/splits transaction in the pre-recorded transaction interface
+
+- use the YNAB API to update incoming transactions using the data in the pre-recorded transactions
+  - sync can be configured to run periodically via Salesforce scheduled jobs
+  - sync can also be run on-demand via the YNAB mobile app and iOS Shortcuts
+
+## The Result
+
+When opening the YNAB app, transactions will already be categorized and split, and will just need to be approved
