@@ -32,7 +32,7 @@ Sometimes I want to split a transaction, but I've forgotten the exact numbers by
   - Twilio webhook calls Salesforce via REST endpoint to create pre-recorded transaction
   - Salesforce mobile app sends notification when a new pre-recorded transaction is created this way
     - Amount and Payee are pre-filled from online banking notification
-    - User then categorizes/splits transaction in the pre-recorded transaction interface
+    - User then categorizes/splits/writes memo for transaction in the pre-recorded transaction interface
 
 - use the YNAB API to update incoming transactions using the data in the pre-recorded transactions
   - sync can be configured to run periodically via Salesforce scheduled jobs
