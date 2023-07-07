@@ -4,7 +4,7 @@
       <lightning-input
         label="Payee"
         required
-        disabled
+        read-only
         value={selectedPayeeName}
         onclick={handlePayeeClick}
       ></lightning-input>
@@ -13,7 +13,7 @@
         label="Amount"
         type="currency"
         required
-        disabled
+        read-only
       ></lightning-input>
 
       <!-- TODO: multiple lightning-datatables in category modal -->
@@ -24,7 +24,7 @@
         label="Category"
         onclick={handleCategoryClick}
         required
-        disabled
+        read-only
       ></lightning-input>
 
       <lightning-input label="Memo"></lightning-input>
