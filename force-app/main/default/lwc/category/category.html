@@ -1,8 +1,33 @@
 <template>
-  <div onclick={handleCategoryClick}>
-    <template if:true={showCheckbox}>
-      <lightning-input type="checkbox"></lightning-input>
+  <!-- <div onclick={handleCategoryClick}> -->
+  <template if:false={hasData}>
+    <lightning-spinner
+      alternative-text="Loading"
+      size="xx-small"
+    ></lightning-spinner>
+  </template>
+
+  <template if:true={hasData}>
+    <template if:false={showCheckbox}>
+      <div onclick={handleCategoryClick}>
+        <lightning-datatable
+          key-field="id"
+          data={data}
+          columns={columns}
+          hide-table-header
+          hide-checkbox-column
+        >
+        </lightning-datatable>
+      </div>
     </template>
-    {name} {available}
-  </div>
+    <template if:true={showCheckbox}>
+      <lightning-datatable
+        key-field="id"
+        data={data}
+        columns={columns}
+        hide-table-header
+      >
+      </lightning-datatable>
+    </template>
+  </template>
 </template>

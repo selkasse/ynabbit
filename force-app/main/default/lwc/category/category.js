@@ -1,19 +1,31 @@
 import { LightningElement, api } from "lwc";
 
+const columns = [
+  { label: "Name", fieldName: "Name" },
+  { label: "Amount", fieldName: "Available__c", type: "currency" }
+];
+
 export default class Category extends LightningElement {
   @api category;
   @api showCheckbox;
-  id;
-  name;
-  available;
+  columns = columns;
+  data;
+  hasData = false;
 
   connectedCallback() {
-    this.id = this.category.Id;
-    this.name = this.category.Name;
-    this.available = this.category.Available__c;
+    console.log(`this.category: ${JSON.stringify(this.category)}`);
+    let data = [];
+    data.push(this.category);
+    this.data = data;
+    console.log(`this.data: ${this.data}`);
   }
 
+  renderedCallback() {
+    this.hasData = true;
+  }
   handleCategoryClick() {
-    // console.log(`you clicked ${this.name} with Id of ${this.id}`);
+    console.log(
+      `you clicked ${this.data[0].Name} with Id of ${this.data[0].Id}`
+    );
   }
 }
