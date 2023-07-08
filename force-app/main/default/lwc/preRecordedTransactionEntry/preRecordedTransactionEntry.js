@@ -14,9 +14,12 @@ import YNABBITMessageChannel from "@salesforce/messageChannel/YNABBITMessageChan
 
 export default class PreRecordedTransactionEntry extends LightningElement {
   size = "small";
+  amount = 0;
   payees;
   selectedPayeeId;
-  selectedPayeeName;
+  selectedPayeeName = "placeholder payee";
+  selectedCategoryId;
+  selectedCategoryName;
   categoryGroups;
   subscription = null;
 
@@ -45,7 +48,6 @@ export default class PreRecordedTransactionEntry extends LightningElement {
 
     const categoryGroupsResult = await getCategoryGroups();
     this.categoryGroups = categoryGroupsResult;
-    console.log(`this.categoryGroups: ${JSON.stringify(this.categoryGroups)}`);
 
     this.subscribeToMessageChannel();
   }

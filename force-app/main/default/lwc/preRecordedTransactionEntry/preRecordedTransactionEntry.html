@@ -1,35 +1,55 @@
 <template>
   <lightning-card title="Pre-Recorded Transaction Entry">
     <div class="slds-m-around_medium">
-      <lightning-input
-        label="Payee"
-        required
-        read-only
-        value={selectedPayeeName}
-        onclick={handlePayeeClick}
-      ></lightning-input>
+      <label class="slds-form-element__label">
+        <span class="slds-m-right_x-small">Payee</span>
+        <lightning-helptext
+          content="Click the payee name to change payees"
+        ></lightning-helptext>
+      </label>
+      <div class="slds-m-bottom_small">
+        <lightning-input
+          type="text"
+          variant="label-hidden"
+          disabled
+          value={selectedPayeeName}
+          onclick={handlePayeeClick}
+        ></lightning-input>
+      </div>
 
-      <lightning-input
-        label="Amount"
-        type="currency"
-        required
-        read-only
-      ></lightning-input>
+      <div class="slds-m-bottom_small">
+        <lightning-input
+          label="Amount"
+          type="number"
+          formatter="currency"
+          value={amount}
+          disabled
+        ></lightning-input>
+      </div>
 
-      <!-- TODO: multiple lightning-datatables in category modal -->
-      <!-- TODO: datatables will have heading of Category Group Name-->
-      <!-- TODO: datatables will have rows of Category names and available amounts -->
-      <!-- TODO: as in, each Category Group will have its own lightning-datatable -->
-      <lightning-input
-        label="Category"
-        onclick={handleCategoryClick}
-        required
-        read-only
-      ></lightning-input>
+      <div class="slds-m-bottom_small">
+        <template if:true={selectedCategoryId}>
+          <lightning-input
+            label="Category"
+            value={selectedCategoryName}
+            required
+            read-only
+          ></lightning-input>
+        </template>
+
+        <template if:false={selectedCategoryId}>
+          <lightning-input
+            label="Category"
+            placeholder="Click to select a category"
+            onclick={handleCategoryClick}
+            required
+          ></lightning-input>
+        </template>
+      </div>
 
       <lightning-input label="Memo"></lightning-input>
 
-      <div class="slds-m-top_medium">
+      <div class="slds-m-top_large">
         <lightning-button
           variant="brand"
           label="Save"

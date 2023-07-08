@@ -3,7 +3,6 @@ import { LightningElement, api } from "lwc";
 export default class Category extends LightningElement {
   @api category;
   @api showCheckbox;
-  //   showCheckbox;
   id;
   name;
   available;
@@ -15,6 +14,6 @@ export default class Category extends LightningElement {
   }
 
   handleCategoryClick() {
-    console.log(`you clicked ${this.name} with Id of ${this.id}`);
+    // console.log(`you clicked ${this.name} with Id of ${this.id}`);
   }
 }

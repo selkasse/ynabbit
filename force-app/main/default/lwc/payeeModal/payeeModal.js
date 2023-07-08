@@ -10,7 +10,8 @@ export default class PayeeModal extends LightningModal {
   @wire(MessageContext)
   messageContext;
 
-  selectedPayee;
+  selectedPayeeId;
+  selectedPayeeName;
 
   value = "";
 
@@ -26,17 +27,22 @@ export default class PayeeModal extends LightningModal {
   }
 
   handleChange(event) {
-    this.selectedPayee = this.content.find(
+    const selectedPayee = this.content.find(
       (option) => option.Id === event.detail.value
     );
+    console.log(`selectedPayee: ${JSON.stringify(selectedPayee)}`);
+    this.selectedPayeeId = selectedPayee.Id;
+    this.selectedPayeeName = selectedPayee.Name;
   }
 
   handleOkay() {
-    const payload = {
-      payeeId: this.selectedPayee.Id,
-      payeeName: this.selectedPayee.Name
-    };
-    publish(this.messageContext, YNABBITMessageChannel, payload);
     this.close(`okay`);
+    if (this.selectedPayeeId) {
+      const payload = {
+        payeeId: this.selectedPayeeId,
+        payeeName: this.selectedPayeeName
+      };
+      publish(this.messageContext, YNABBITMessageChannel, payload);
+    }
   }
 }

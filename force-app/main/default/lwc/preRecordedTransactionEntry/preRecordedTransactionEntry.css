@@ -1,3 +1,10 @@
 .submit {
     width: 100%;
 }
+
+:host .p-left {
+    padding-left: 2rem;
+}
+/* .lgc-bg {
+    background-color: rgb(242 242 242);
+} */

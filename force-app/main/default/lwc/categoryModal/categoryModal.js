@@ -11,9 +11,6 @@ export default class CategoryModal extends LightningModal {
   @wire(MessageContext)
   messageContext;
 
-  connectedCallback() {
-    console.log(`this.content: ${JSON.stringify(this.content)}`);
-  }
   handleSplit() {
     this.isSplit = true;
   }

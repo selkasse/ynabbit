@@ -2,14 +2,17 @@
   <lightning-modal-header label="Select Category"></lightning-modal-header>
   <lightning-modal-body>
     <template for:each={content} for:item="categoryGroup">
-      <h1 key={categoryGroup.Id} class="category-group">
-        {categoryGroup.Name}
-      </h1>
-      <template for:each={categoryGroup.Categories__r} for:item="category">
-        <div key={category.Id}>
-          <c-category category={category} show-checkbox={isSplit}></c-category>
-        </div>
-      </template>
+      <div key={categoryGroup.Id} class="slds-m-bottom_small">
+        <h1 class="category-group slds-m-bottom_small">{categoryGroup.Name}</h1>
+        <template for:each={categoryGroup.Categories__r} for:item="category">
+          <div key={category.Id} class="slds-m-vertical_xx-small">
+            <c-category
+              category={category}
+              show-checkbox={isSplit}
+            ></c-category>
+          </div>
+        </template>
+      </div>
     </template>
   </lightning-modal-body>
   <lightning-modal-footer>
