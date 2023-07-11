@@ -14,4 +14,14 @@
        <description>Name of the selected Payee</description>
    </lightningMessageFields>
 
+   <lightningMessageFields>
+       <fieldName>categoryId</fieldName>
+       <description>record Id of the selected Category</description>
+   </lightningMessageFields>
+
+   <lightningMessageFields>
+       <fieldName>categoryName</fieldName>
+       <description>Name of the selected Category</description>
+   </lightningMessageFields>
+
 </LightningMessageChannel>
