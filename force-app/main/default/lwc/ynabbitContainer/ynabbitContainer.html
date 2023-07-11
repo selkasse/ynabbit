@@ -1,0 +1,10 @@
+<template>
+  <template if:true={showTransactionEntry}>
+    <c-pre-recorded-transaction-entry
+      oncategoryclick={handleCategoryEvent}
+    ></c-pre-recorded-transaction-entry>
+  </template>
+  <template if:true={showCategoryPicker}>
+    <c-category-picker category-groups={categoryGroups}></c-category-picker>
+  </template>
+</template>

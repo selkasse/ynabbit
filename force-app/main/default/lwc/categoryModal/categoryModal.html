@@ -2,14 +2,9 @@
   <lightning-modal-header label="Select Category"></lightning-modal-header>
   <lightning-modal-body>
     <template for:each={content} for:item="categoryGroup">
-      <!-- <div key={categoryGroup.Id} class="slds-m-bottom_small"> -->
       <div key={categoryGroup.Id}>
-        <h1 class="category-group">
-          <!-- <h1 key={categoryGroup.Id} class="category-group"> -->
-          {categoryGroup.Name}
-        </h1>
+        <h1 class="category-group">{categoryGroup.Name}</h1>
         <template for:each={categoryGroup.Categories__r} for:item="category">
-          <!-- TODO: make each category its own datatable, enclosed in a click-able div -->
           <div key={category.Id}>
             <c-category
               category={category}

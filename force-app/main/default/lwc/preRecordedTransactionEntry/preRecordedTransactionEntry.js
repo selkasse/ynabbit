@@ -63,12 +63,18 @@ export default class PreRecordedTransactionEntry extends LightningElement {
     });
   }
 
-  async handleCategoryClick() {
-    await categoryModal.open({
-      size: this.size,
-      content: this.categoryGroups
-    });
+  handleCategoryClick() {
+    this.dispatchEvent(
+      new CustomEvent("categoryclick", { detail: this.categoryGroups })
+    );
   }
+
+  // async handleCategoryClick() {
+  //   await categoryModal.open({
+  //     size: this.size,
+  //     content: this.categoryGroups
+  //   });
+  // }
 
   handlePayeeMessage(message) {
     this.selectedPayeeId = message.payeeId;

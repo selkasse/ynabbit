@@ -28,23 +28,23 @@
       </div>
 
       <div class="slds-m-bottom_small">
-        <template if:true={selectedCategoryId}>
+        <lightning-input
+          label="Category"
+          placeholder="Click to select a category"
+          onclick={handleCategoryClick}
+          required
+        ></lightning-input>
+        <!-- <template if:true={selectedCategoryId}>
           <lightning-input
             label="Category"
             value={selectedCategoryName}
             required
             read-only
           ></lightning-input>
-        </template>
+        </template> -->
 
-        <template if:false={selectedCategoryId}>
-          <lightning-input
-            label="Category"
-            placeholder="Click to select a category"
-            onclick={handleCategoryClick}
-            required
-          ></lightning-input>
-        </template>
+        <!-- <template if:false={selectedCategoryId}>
+        </template> -->
       </div>
 
       <lightning-input label="Memo"></lightning-input>
