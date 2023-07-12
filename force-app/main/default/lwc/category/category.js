@@ -7,17 +7,13 @@ const columns = [
   {
     label: "Name",
     fieldName: "Name",
-    // fixedWidth: 550,
-    cellAttributes: { class: "slds-p-vertical_xx-large" }
-    // cellAttributes: { class: "slds-theme_shade" }
+    cellAttributes: { class: "slds-theme_shade" }
   },
   {
     label: "Amount",
     fieldName: "Available__c",
     type: "currency",
-    // fixedWidth: 80,
-    cellAttributes: { class: "slds-p-vertical_xx-large" }
-    // cellAttributes: { class: "slds-p-vertical_large slds-theme_shade" }
+    cellAttributes: { class: "slds-theme_shade" }
   }
 ];
 

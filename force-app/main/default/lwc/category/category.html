@@ -10,14 +10,22 @@
   <template if:true={hasData}>
     <template if:false={showCheckbox}>
       <div onclick={handleCategoryClick}>
-        <lightning-datatable
+        <!-- <lightning-datatable
           key-field="id"
           data={data}
           columns={columns}
           hide-table-header
           hide-checkbox-column
         >
-        </lightning-datatable>
+        </lightning-datatable> -->
+        <c-category-datatable
+          key-field="id"
+          data={data}
+          columns={columns}
+          hide-table-header
+          hide-checkbox-column
+        >
+        </c-category-datatable>
       </div>
     </template>
     <template if:true={showCheckbox}>
