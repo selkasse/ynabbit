@@ -1,5 +1,4 @@
 <template>
-  <!-- <div onclick={handleCategoryClick}> -->
   <template if:false={hasData}>
     <lightning-spinner
       alternative-text="Loading"
@@ -10,18 +9,11 @@
   <template if:true={hasData}>
     <template if:false={showCheckbox}>
       <div onclick={handleCategoryClick}>
-        <!-- <lightning-datatable
-          key-field="id"
-          data={data}
-          columns={columns}
-          hide-table-header
-          hide-checkbox-column
-        >
-        </lightning-datatable> -->
         <c-category-datatable
           key-field="id"
           data={data}
           columns={columns}
+          column-widths-mode="auto"
           hide-table-header
           hide-checkbox-column
         >
@@ -29,13 +21,14 @@
       </div>
     </template>
     <template if:true={showCheckbox}>
-      <lightning-datatable
+      <c-category-datatable
         key-field="id"
         data={data}
         columns={columns}
+        column-widths-mode="auto"
         hide-table-header
       >
-      </lightning-datatable>
+      </c-category-datatable>
     </template>
   </template>
 </template>

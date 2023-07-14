@@ -2,7 +2,6 @@ import { LightningElement, wire } from "lwc";
 import getPayees from "@salesforce/apex/PreRecordedTransactionController.getPayees";
 import getCategoryGroups from "@salesforce/apex/PreRecordedTransactionController.getCategoryGroups";
 import payeeModal from "c/payeeModal";
-import categoryModal from "c/categoryModal";
 
 import {
   subscribe,

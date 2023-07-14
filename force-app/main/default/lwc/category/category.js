@@ -6,14 +6,13 @@ import YNABBITMessageChannel from "@salesforce/messageChannel/YNABBITMessageChan
 const columns = [
   {
     label: "Name",
-    fieldName: "Name",
-    cellAttributes: { class: "slds-theme_shade" }
+    fieldName: "Name"
   },
   {
     label: "Amount",
     fieldName: "Available__c",
     type: "currency",
-    cellAttributes: { class: "slds-theme_shade" }
+    initialWidth: 100
   }
 ];
 
@@ -45,8 +44,5 @@ export default class Category extends LightningElement {
       categoryName: this.data[0].Name
     };
     publish(this.messageContext, YNABBITMessageChannel, payload);
-
-    //   TODO: need to listen for this Lightning Message Service event in the modal and close there
-    // this.close(`okay`);
   }
 }

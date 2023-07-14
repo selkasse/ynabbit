@@ -2,12 +2,9 @@ import { LightningElement, api } from "lwc";
 
 export default class CategoryPicker extends LightningElement {
   @api categoryGroups;
+  isSplit = false;
 
-  connectedCallback() {
-    console.log(
-      `categoryGroups in category picker: ${JSON.stringify(
-        this.categoryGroups
-      )}`
-    );
+  handleSplit() {
+    this.isSplit = true;
   }
 }

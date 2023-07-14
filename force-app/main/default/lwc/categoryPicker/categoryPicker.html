@@ -1,5 +1,13 @@
 <template>
   <lightning-card title="Select a Category">
+    <div class="flex-heading-button slds-p-horizontal_medium">
+      <lightning-button label="Back"></lightning-button>
+      <lightning-button
+        label="Split"
+        variant="brand"
+        onclick={handleSplit}
+      ></lightning-button>
+    </div>
     <div class="slds-m-around_small">
       <template for:each={categoryGroups} for:item="categoryGroup">
         <div key={categoryGroup.Id}>
