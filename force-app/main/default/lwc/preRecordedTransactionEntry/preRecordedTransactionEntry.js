@@ -1,4 +1,4 @@
-import { LightningElement, wire } from "lwc";
+import { LightningElement, wire, api } from "lwc";
 import getPayees from "@salesforce/apex/PreRecordedTransactionController.getPayees";
 import getCategoryGroups from "@salesforce/apex/PreRecordedTransactionController.getCategoryGroups";
 import payeeModal from "c/payeeModal";
@@ -16,9 +16,9 @@ export default class PreRecordedTransactionEntry extends LightningElement {
   amount = 0;
   payees;
   selectedPayeeId;
-  selectedPayeeName = "placeholder payee";
-  selectedCategoryId;
-  selectedCategoryName;
+  selectedPayeeName;
+  @api selectedCategoryId;
+  @api selectedCategoryName;
   categoryGroups;
   subscription = null;
 
@@ -68,12 +68,13 @@ export default class PreRecordedTransactionEntry extends LightningElement {
     );
   }
 
-  // async handleCategoryClick() {
-  //   await categoryModal.open({
-  //     size: this.size,
-  //     content: this.categoryGroups
-  //   });
-  // }
+  handleCategorySelect(event) {
+    console.log(
+      `received category selection in preRecordedTransactionEntry: ${JSON.stringify(
+        event.detail
+      )}`
+    );
+  }
 
   handlePayeeMessage(message) {
     this.selectedPayeeId = message.payeeId;

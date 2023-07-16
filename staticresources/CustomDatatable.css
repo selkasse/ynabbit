@@ -1,4 +1,39 @@
-tr.slds-hint-parent{
+/* tr.slds-hint-parent{
     height: 60px;
     background-color: var(--lwc-colorBackground,rgb(243, 243, 243));
-}
+} */
+
+/* tr.slds-hint-parent:focus, tr.slds-hint-parent:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+} */
+
+/* th:focus {
+    border: none;
+    box-shadow: none;
+    border-color: var(--lwc-colorBackground,rgb(243, 243, 243));
+    outline: none;
+} */
+
+/* tr.slds-hint-parent.slds-is-selected{
+    outline: none;
+} */
+
+/* td.slds-has-focus{
+    outline: none;
+    border: none;
+
+} */
+
+/* td.slds-has-focus:focus, td.slds-has-focus:active{
+
+    outline: none;
+    border: none;
+} */
+/* th.slds-has-focus{
+    --lwc-shadowButtonFocus: 0;
+    --lwc-borderWidthThin: 0;
+    --slds-c-input-shadow-focus: 0;
+    --sds-c-input-shadow-focus: 0;
+} */

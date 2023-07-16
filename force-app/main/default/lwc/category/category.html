@@ -16,6 +16,7 @@
           column-widths-mode="auto"
           hide-table-header
           hide-checkbox-column
+          class="slds-no-cell-focus"
         >
         </c-category-datatable>
       </div>
@@ -27,6 +28,8 @@
         columns={columns}
         column-widths-mode="auto"
         hide-table-header
+        onrowselection={handleRowSelection}
+        class="slds-no-cell-focus"
       >
       </c-category-datatable>
     </template>

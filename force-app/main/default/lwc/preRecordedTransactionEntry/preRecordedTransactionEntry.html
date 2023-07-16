@@ -1,17 +1,19 @@
 <template>
   <lightning-card title="Pre-Recorded Transaction Entry">
     <div class="slds-m-around_medium">
-      <label class="slds-form-element__label">
+      <!-- <label class="slds-form-element__label">
         <span class="slds-m-right_x-small">Payee</span>
         <lightning-helptext
           content="Click the payee name to change payees"
         ></lightning-helptext>
-      </label>
+      </label> -->
       <div class="slds-m-bottom_small">
         <lightning-input
           type="text"
-          variant="label-hidden"
+          label="Payee"
+          required
           disabled
+          placeholder="Click to select a payee"
           value={selectedPayeeName}
           onclick={handlePayeeClick}
         ></lightning-input>
@@ -23,6 +25,7 @@
           type="number"
           formatter="currency"
           value={amount}
+          required
           disabled
         ></lightning-input>
       </div>
@@ -31,8 +34,11 @@
         <lightning-input
           label="Category"
           placeholder="Click to select a category"
+          value={selectedCategoryName}
           onclick={handleCategoryClick}
+          oncategoryselect={handleCategorySelect}
           required
+          disabled
         ></lightning-input>
       </div>
 

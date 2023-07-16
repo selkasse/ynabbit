@@ -1,12 +1,22 @@
 <template>
   <lightning-card title="Select a Category">
     <div class="flex-heading-button slds-p-horizontal_medium">
-      <lightning-button label="Back"></lightning-button>
-      <lightning-button
-        label="Split"
-        variant="brand"
-        onclick={handleSplit}
-      ></lightning-button>
+      <lightning-button label="Back" onclick={handleBack}></lightning-button>
+      <template if:false={isSplit}>
+        <lightning-button
+          label="Split"
+          variant="brand"
+          onclick={handleSplit}
+        ></lightning-button>
+      </template>
+      <template if:true={isSplit}>
+        <lightning-button
+          label="Next"
+          variant="brand"
+          disabled={nextDisabled}
+          onclick={handleNext}
+        ></lightning-button>
+      </template>
     </div>
     <div class="slds-m-around_small">
       <template for:each={categoryGroups} for:item="categoryGroup">

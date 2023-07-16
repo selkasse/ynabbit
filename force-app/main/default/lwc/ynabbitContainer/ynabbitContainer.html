@@ -2,9 +2,14 @@
   <template if:true={showTransactionEntry}>
     <c-pre-recorded-transaction-entry
       oncategoryclick={handleCategoryEvent}
+      selected-category-id={selectedCategoryId}
+      selected-category-name={selectedCategoryName}
     ></c-pre-recorded-transaction-entry>
   </template>
   <template if:true={showCategoryPicker}>
-    <c-category-picker category-groups={categoryGroups}></c-category-picker>
+    <c-category-picker
+      category-groups={categoryGroups}
+      onbackpressed={handleBackPressed}
+    ></c-category-picker>
   </template>
 </template>
