@@ -21,7 +21,11 @@
     <div class="slds-m-around_small">
       <template for:each={categoryGroups} for:item="categoryGroup">
         <div key={categoryGroup.Id}>
-          <h1 class="category-group">{categoryGroup.Name}</h1>
+          <h1>
+            <span class="slds-page-header__title" title={categoryGroup.Name}
+              >{categoryGroup.Name}</span
+            >
+          </h1>
           <template for:each={categoryGroup.Categories__r} for:item="category">
             <div key={category.Id}>
               <c-category
